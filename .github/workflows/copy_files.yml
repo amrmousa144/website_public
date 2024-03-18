@@ -1,0 +1,17 @@
+name: Copy Files
+
+on:
+  push:
+    branches:
+      - main  # Change this to match your branch name if it's different
+
+jobs:
+  copy_files:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      
+      - name: Copy files
+        run: cp -r website_dev/public/. website_public/public/
